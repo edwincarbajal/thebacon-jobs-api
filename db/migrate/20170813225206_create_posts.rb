@@ -9,7 +9,5 @@ class CreatePosts < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
-    add_index :posts, :position, unique: true
-    add_index :posts, :category, unique: true
   end
 end

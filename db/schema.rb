@@ -20,8 +20,6 @@ ActiveRecord::Schema.define(version: 20170813225206) do
     t.string   "category",    null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["category"], name: "index_posts_on_category", unique: true
-    t.index ["position"], name: "index_posts_on_position", unique: true
   end
 
 end

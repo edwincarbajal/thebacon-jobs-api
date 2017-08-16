@@ -1,9 +1,10 @@
 class Api::V1::PostsController < ApplicationController
+  before_action :authenticate_user, only: [:create]
   before_action :set_post, only: [:show, :update, :destroy]
 
   def index
     @posts = Post.all.order('created_at DESC')
-    render json: {status: 'SUCCESS', message: 'Loaded posts', data: @posts}, status: :ok
+    render json: @posts, status: :ok
   end
 
   def show
@@ -24,7 +25,6 @@ class Api::V1::PostsController < ApplicationController
    head :no_content
   end
 
-   # DELETE /todos/:id
   def destroy
     @post.destroy
     head :no_content
@@ -33,7 +33,7 @@ class Api::V1::PostsController < ApplicationController
   private
     def post_params
       # whitelist params
-      params.require(:post).permit(:position, :description, :employer, :location, :category)
+      params.require(:post).permit(:position, :description, :employer, :location, :category, :user_id)
     end
 
     def set_post

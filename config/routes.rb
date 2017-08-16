@@ -4,4 +4,6 @@ Rails.application.routes.draw do
       resources :posts
     end
   end
+  post 'user_token' => 'user_token#create'
+  mount Knock::Engine => "/knock"
 end

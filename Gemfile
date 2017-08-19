@@ -18,7 +18,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'active_model_serializers', '~> 0.10.0'
 
-gem 'knock' 
+gem 'knock'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -27,6 +27,7 @@ gem 'knock'
 gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
+  gem 'faker'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   # Use Puma as the app server

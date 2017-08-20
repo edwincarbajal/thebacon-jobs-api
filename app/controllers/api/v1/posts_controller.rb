@@ -32,7 +32,7 @@ class Api::V1::PostsController < ApplicationController
   private
     def post_params
       # whitelist params
-      params.require(:post).permit(:position, :description, :employer, :location, :category, :user_id)
+      params.require(:post).permit(:position, :description, :employer, :location, :category)
     end
 
     def set_post

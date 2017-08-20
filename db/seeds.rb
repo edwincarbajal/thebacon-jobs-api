@@ -15,7 +15,6 @@ end
     description: Faker::Hipster.paragraphs(7),
     employer: Faker::Company.name,
     location: "New York, NY",
-    category: Faker::Job.key_skill,
-    user_id: 1
+    category: Faker::Job.key_skill
   )
 end

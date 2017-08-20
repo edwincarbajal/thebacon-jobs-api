@@ -3,7 +3,7 @@ class PostSerializer < ActiveModel::Serializer
 
   belongs_to :user, key: "author"
 
-  def description
-    JSON.parse(object.description).join()
-  end
+  # def description
+  #   JSON.parse(object.description).join()
+  # end
 end

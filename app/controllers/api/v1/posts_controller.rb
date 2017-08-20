@@ -1,5 +1,5 @@
 class Api::V1::PostsController < ApplicationController
-  before_action :authenticate_user, only: [:create]
+  before_action :authenticate_user, only: [:create, :update, :destroy]
   before_action :set_post, only: [:show, :update, :destroy]
 
   def index
@@ -8,13 +8,13 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def show
-    render json: {status: 'SUCCESS', message: 'Loaded Post', data: @post}, status: :ok
+    render json: @post, status: :ok
   end
 
   def create
     @post = Post.new(post_params)
     if @post.save
-      render json: {message: 'Succesfully created Post', data: @post}, status: :created
+      render json: @post, status: :created
     else
       render json: {status: 'ERROR', errors: @post.errors}, status: :unprocessable_entity
     end

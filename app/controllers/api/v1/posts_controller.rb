@@ -2,7 +2,7 @@ class Api::V1::PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
 
   def index
-    @posts = Post.all.order('created_at DESC')
+    @posts = Post.desc
     render json: @posts, status: :ok
   end
 
@@ -11,16 +11,12 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
-      render json: @post, status: :created
-    else
-      render json: {status: 'ERROR', errors: @post.errors}, status: :unprocessable_entity
-    end
+    @post = Post.create!(post_params)
+    render json: @post, status: :created
   end
 
   def update
-   @post.update(post_params)
+   @post.update!(post_params)
    head :no_content
   end
 
@@ -32,7 +28,7 @@ class Api::V1::PostsController < ApplicationController
   private
     def post_params
       # whitelist params
-      params.require(:post).permit(:position, :description, :employer, :location, :category)
+      params.require(:post).permit(:position, :description, :employer, :location, :term, :categories)
     end
 
     def set_post

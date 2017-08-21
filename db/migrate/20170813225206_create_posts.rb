@@ -5,7 +5,8 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.text   :description,  null: false
       t.string :employer,     null: false
       t.string :location,     null: false
-      t.string :category,     null: false
+      t.string :term,         null: false
+      t.string :categories,   null: false
 
       t.timestamps
     end

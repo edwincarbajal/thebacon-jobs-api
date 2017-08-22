@@ -4,10 +4,9 @@ This application serves as a RESTful API for for our front end Job Board.
 
 ## Outline
 
-- [Getting Started](#Getting Started)
+- [Getting Started](#getting-started)
 - [Building APIs](#building-apis)
 - [Quick Reference](#quick-reference)
-- [Deploying to Heroku](#deploying)
 
 ## Libaries
 
@@ -17,7 +16,7 @@ This project is using several libraries and frameworks:
 
  ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development.
 
 ### Prerequisites
 
@@ -27,16 +26,7 @@ Make sure you have Ruby 2.3.1 and Git installed. Type into the terminal:
 $ ruby -v
 ```
 
-Then type into the terminal:
-
-```bash
-$ git --version
-```
-
 Verify you see "ruby 2.3.1pXXX" (where the XXX can be any number). If not then download and run [RailsInstaller](http://railsinstaller.org/) in order to get Ruby.
-
-If you get an error of "no git command", then download and run
-[RailsInstaller](http://railsinstaller.org/) in order to get git.
 
 ### Installing
 
@@ -74,3 +64,17 @@ $ rails s -p 3001
 
 This starts your API application at <http://localhost:3001> so you
 can try it locally. Try going to <http://localhost:3001/v1/posts>.
+
+```javascript
+[
+  {
+    "id": 1,
+    "position": "Software Engineer",
+    "description": "Middle-out compression unleashed with machine learning.",
+    "employer": "PiedPiper",
+    "location": "San Francisco, CA",
+    "term": "Full-time",
+    "categories": "Software Engineering,Desgin UI/UX,QA Testers"
+  }
+]
+```

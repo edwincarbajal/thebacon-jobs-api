@@ -6,7 +6,6 @@ This application serves as a RESTful API for for our front end Job Board.
 
 - [Getting Started](#getting-started)
 - [Testing APIs](#testing-apis)
-- [Quick Reference](#quick-reference)
 
 ## Libaries
 
@@ -83,33 +82,33 @@ can try it locally. Try going to <http://localhost:3001/v1/posts>.
 
 ### Posts
 
-Posts - Read data of all posts
+Posts - Read data of a post
 
 Get
 ```
-/v1/posts
+/v1/posts/:id
 ```
 
 Example Usage
 ```bash
-curl -i https://thebaconjobsapi.herokuapp.com/v1/posts
+curl -i https://thebaconjobsapi.herokuapp.com/v1/posts/1
 ```
 
 Response
 ```
 HTTP/1.1 200 OK
 Server: Cowboy
-Date: Wed, 23 Aug 2017 19:44:01 GMT
+Date: Wed, 23 Aug 2017 19:56:23 GMT
 Connection: keep-alive
 Content-Type: application/json; charset=utf-8
-Etag: W/"60419e6f38ee8870be6cf261335eab2d"
+Etag: W/"fb7db47fc04383eabc4c1be65c2131cf"
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 54d8c603-5b6f-4a9a-81e5-3d3b98dcce3a
-X-Runtime: 0.009011
+X-Request-Id: 5be20e63-1655-40f5-94da-37bd924239fd
+X-Runtime: 0.005837
 Strict-Transport-Security: max-age=15552000; includeSubDomains
 Vary: Origin
 Transfer-Encoding: chunked
 Via: 1.1 vegur
 
-[{"id":1,"position":"Software Engineer","description":"Middle-out compression unleashed with machine learning.","employer":"TheBacon","location":"San Francisco, CA","term":"Full-time","categories":"Software Engineering,Desgin UI/UX,QA Testers"}]
+{"id":1,"position":"Software Engineer","description":"Middle-out compression unleashed with machine learning.","employer":"TheBacon","location":"San Francisco, CA","term":"Full-time","categories":"Software Engineering,Desgin UI/UX,QA Testers"}
 ```
